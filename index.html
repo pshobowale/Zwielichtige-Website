@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>The Coolest Website on the Internet</title>
+	<title>Total Offiziele Quelle</title>
 	<style>
 		body {
 			background-image: url('https://media.giphy.com/media/xUPGcBd4gdNdCgNFIY/giphy.gif');
@@ -24,9 +25,17 @@
 		}
 
 		@keyframes blink {
-			0% { opacity: 1; }
-			50% { opacity: 0.5; }
-			100% { opacity: 1; }
+			0% {
+				opacity: 1;
+			}
+
+			50% {
+				opacity: 0.5;
+			}
+
+			100% {
+				opacity: 1;
+			}
 		}
 
 		.rotating-globe {
@@ -43,8 +52,13 @@
 		}
 
 		@keyframes rotate {
-			0% { transform: rotate(0deg); }
-			100% { transform: rotate(360deg); }
+			0% {
+				transform: rotate(0deg);
+			}
+
+			100% {
+				transform: rotate(360deg);
+			}
 		}
 
 		.rainbow-hr hr {
@@ -58,13 +72,33 @@
 		}
 
 		@keyframes rainbow {
-			0% { background-color: #ff0000; }
-			17% { background-color: #ff7f00; }
-			34% { background-color: #ffff00; }
-			51% { background-color: #00ff00; }
-			68% { background-color: #0000ff; }
-			85% { background-color: #4b0082; }
-			100% { background-color: #9400d3; }
+			0% {
+				background-color: #ff0000;
+			}
+
+			17% {
+				background-color: #ff7f00;
+			}
+
+			34% {
+				background-color: #ffff00;
+			}
+
+			51% {
+				background-color: #00ff00;
+			}
+
+			68% {
+				background-color: #0000ff;
+			}
+
+			85% {
+				background-color: #4b0082;
+			}
+
+			100% {
+				background-color: #9400d3;
+			}
 		}
 
 		.blinking-text {
@@ -76,14 +110,22 @@
 		}
 
 		@keyframes blink {
-			0% { opacity: 1; }
-			50% { opacity: 0.5; }
-			100% { opacity: 1; }
+			0% {
+				opacity: 1;
+			}
+
+			50% {
+				opacity: 0.5;
+			}
+
+			100% {
+				opacity: 1;
+			}
 		}
 
-		
+
 		.shimmering-stars {
-			background-image: url("https://media.giphy.com/media/11SdI0nBdFdH4k/giphy.gif"); 
+			background-image: url("https://media.giphy.com/media/11SdI0nBdFdH4k/giphy.gif");
 			background-repeat: repeat;
 			background-position: 0px 0px;
 			animation: shimmer 5s linear infinite;
@@ -96,11 +138,12 @@
 			border: 10px solid #ffffff;
 		}
 
-	
+
 		@keyframes shimmer {
 			from {
 				background-position: 0px 0px;
 			}
+
 			to {
 				background-position: 100px 100px;
 			}
@@ -115,9 +158,17 @@
 		}
 
 		@keyframes flash {
-			0% { opacity: 1; }
-			50% { opacity: 0; }
-			100% { opacity: 1; }
+			0% {
+				opacity: 1;
+			}
+
+			50% {
+				opacity: 0;
+			}
+
+			100% {
+				opacity: 1;
+			}
 		}
 
 		.mouse-trail {
@@ -138,6 +189,7 @@
 				transform: scale(1);
 				opacity: 0.5;
 			}
+
 			100% {
 				transform: scale(5);
 				opacity: 0;
@@ -145,10 +197,11 @@
 		}
 	</style>
 </head>
+
 <body>
-	<h1>Welcome to the Coolest Website on the Internet</h1>
+	<h1>Jeder kann so etwas in 10 Minuten mit ChatGPT erstellen</h1>
 	<img class="rotating-globe" src="https://media.giphy.com/media/QTaTWJjygszUoqPiSj/giphy.gif" alt="Rotating Globe">
-	
+
 	<div class="rainbow-hr">
 		<hr>
 		<hr>
@@ -161,31 +214,43 @@
 		<hr>
 	</div>
 
-	<div class="blinking-text">Prepare to be Amazed!</div>
-	<div class="shimmering-stars">
-		<div class="flashy-text">This is the Place to Be</div>
+	<div class="blinking-text">und den Inhalt individuell anpassen. Noch mehr echte Zitate gefällig? Einfach neu laden!
 	</div>
-	<p>Welcome to my website!</p>
-
+	<div class="shimmering-stars">
+		<div class="flashy-text"><span id="random-line"></span></div>
+	</div>
+	<p>Here is a random line from the text file: <span id="random-line"></span></p>
 
 	<script>
-		document.addEventListener('mousemove', function(e){
+		document.addEventListener('mousemove', function (e) {
 			let trail = document.createElement('div');
 			trail.classList.add('mouse-trail');
 			trail.style.left = e.pageX + 'px';
 			trail.style.top = e.pageY + 'px';
 			document.body.appendChild(trail);
-			setTimeout(function(){
+			setTimeout(function () {
 				document.body.removeChild(trail);
 			}, 1000);
 		});
 	</script>
+
+	<script>
+		fetch('./chatgpt_output.txt')
+			.then(response => response.text())
+			.then(text => {
+				var lines = text.split('\n');
+				var randomIndex = Math.floor(Math.random() * lines.length);
+				document.getElementById('random-line').innerHTML = lines[randomIndex];
+			})
+			.catch(error => console.error(error));
+	</script>
+
+	<script>
+		// Play background music
+		var audio = new Audio('music.mp3');
+		audio.loop = true;
+		audio.play();
+	</script>
 </body>
-</body>
-<script>
-	// Play background music
-	var audio = new Audio('music.mp3');
-	audio.loop = true;
-	audio.play();
-</script>
+
 </html>
