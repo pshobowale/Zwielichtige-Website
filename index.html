@@ -214,12 +214,12 @@
 		<hr>
 	</div>
 
-	<div class="blinking-text">und den Inhalt individuell anpassen. Noch mehr echte Zitate gefällig? Einfach neu laden!
+	<div class="flashy-text">und den Inhalt individuell anpassen. Noch mehr echte Zitate gefällig? Einfach neu laden!
 	</div>
 	<div class="shimmering-stars">
-		<div class="flashy-text"><br><br><br><br><br><br><span id="random-line"></span></div>
+		<div class="blinking-text"><br><br><br><br><br><br><span id="random-line"></span></div>
 	</div>
-
+	<audio src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Korobeiniki.ogg" type="audio/ogg" autoplay loop></audio>
 	<script>
 		document.addEventListener('mousemove', function (e) {
 			let trail = document.createElement('div');
@@ -244,12 +244,7 @@
 			.catch(error => console.error(error));
 	</script>
 
-	<script>
-		// Play background music
-		var audio = new Audio('music.mp3');
-		audio.loop = true;
-		audio.play();
-	</script>
+
 </body>
 
 </html>

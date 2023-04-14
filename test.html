@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>MIDI Background Demo</title>
+  </head>
+  <body>
+    <h1>Welcome to my website!</h1>
+    <p>Here's some content that will appear on the page.</p>
+
+    <button onclick="playMidi()">Play MIDI</button>
+
+    <script>
+      var audio = new Audio('https://upload.wikimedia.org/wikipedia/commons/f/fe/Korobeiniki.mid');
+      audio.loop = true;
+
+      function playMidi() {
+        audio.play();
+      }
+    </script>
+  </body>
+</html>
